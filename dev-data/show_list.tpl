@@ -1,5 +1,4 @@
 <p>Todo List</p>
-<p>This is Development Server</p>
 <table border="1">
 %for row in rows:
     <tr>
