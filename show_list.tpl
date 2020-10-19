@@ -6,6 +6,9 @@
     %for item in row:
         <td>{{item}}</td>
     %end
+        <td>
+            <a href="/delete_item/{{row[0]}}">DELETE</a>
+        </td>
     </tr>
 %end
 </table>
