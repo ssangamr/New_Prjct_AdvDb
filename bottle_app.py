@@ -1,5 +1,4 @@
 import os
-import sqlite3
 from bottle import get, post, template, request, redirect
 
 ON_PYTHONANYWHERE = "PYTHONANYWHERE_DOMAIN" in os.environ
@@ -10,24 +9,8 @@ if ON_PYTHONANYWHERE:
     from bottle import default_app
 else:
     from bottle import  run, debug
-from storage import get_items, get_item, update_status, create_item, update_item, delete_item
 
-def update_item(id, updated_task):
-    connection = sqlite3.connect("todo.db")
-    cursor = connection.cursor()
-    cursor.execute("update todo set task=? where id=?", (updated_task,id))
-    connection.commit()
-    cursor.close()
-
-def delete_item(id):
-    connection = sqlite3.connect("todo.db")
-    cursor = connection.cursor()
-    cursor.execute("delete from todo where id=?", (id,))
-    connection.commit()
-    cursor.close()
-
-
-
+from postgres_storage import get_items, get_item, update_status, create_item, update_item, delete_item
 
 
 @get('/')
