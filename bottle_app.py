@@ -57,6 +57,13 @@ def post_update_item():
     update_item(id, updated_item)
     redirect("/")
 
+@post("/update_item1")
+def post_update_item():
+    id = int(request.forms.get("id").strip())
+    updated_item = request.forms.get("updated_item").strip()
+    update_item(id, updated_item)
+    redirect("/")
+
 @post("/update_item2")
 def post_update_item():
     id = int(request.forms.get("id").strip())
