@@ -42,8 +42,7 @@ def post_new_item():
 @post("/new_item2")
 def post_new_item():
     new_item = request.forms.get("new_item").strip()
-    create_item(new_item, 1)
-    redirect("/")
+
 
 
 @get("/update_item/<id:int>")
