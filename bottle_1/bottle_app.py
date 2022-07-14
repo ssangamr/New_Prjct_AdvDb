@@ -44,3 +44,7 @@ else:
     debug(True)
     run(host='localhost', port=8080)
 
+
+    def():
+    print("this is for test")
+
