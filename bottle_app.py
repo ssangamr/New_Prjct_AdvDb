@@ -56,8 +56,6 @@ def post_update_item():
 def post_update_item():
     id = int(request.forms.get("id").strip())
     updated_item = request.forms.get("updated_item").strip()
-    update_item(id, updated_item)
-    redirect("/")
 
 @get("/delete_item/<id:int>")
 def get_delete_item(id):
