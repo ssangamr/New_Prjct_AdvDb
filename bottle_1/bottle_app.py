@@ -44,3 +44,13 @@ else:
     debug(True)
     run(host='localhost', port=8080)
 
+
+    def():
+    print("this is for test")
+    def():
+    print("this is for test2")
+    def():
+    print("this is for test3")
+    def():
+    print("this is for test4")
+

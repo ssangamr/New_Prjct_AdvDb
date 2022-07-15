@@ -39,6 +39,11 @@ def post_new_item():
     create_item(new_item, 1)
     redirect("/")
 
+@post("/new_item2")
+def post_new_item():
+    new_item = request.forms.get("new_item").strip()
+
+
 
 @get("/update_item/<id:int>")
 def get_update_item(id):
@@ -46,6 +51,13 @@ def get_update_item(id):
     return template("update_item", row=result)
 
 @post("/update_item")
+def post_update_item():
+    id = int(request.forms.get("id").strip())
+    updated_item = request.forms.get("updated_item").strip()
+    update_item(id, updated_item)
+    redirect("/")
+
+@post("/update_item1")
 def post_update_item():
     id = int(request.forms.get("id").strip())
     updated_item = request.forms.get("updated_item").strip()
